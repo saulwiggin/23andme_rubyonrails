@@ -1,0 +1,15 @@
+<script src="https://api.23andme.com/res/js/ttam-0.3.js"></script>
+<div id="wrapper">Loading...</div>
+<script>
+    window.onload = function () {
+        var ttam = TTAM('123456789abcdef0123456789abcdef0');
+        ttam.snpTable('wrapper', 'rs2476601', {
+            AA: 'Moderately higher odds of developing hypothyroidism.',
+            AG: 'Slightly higher odds of developing hypothyroidism.',
+            GG: 'Typical odds of developing hypothyroidism.',
+            order: 'AA,AG,GG'
+        }, {
+            width: 450
+        });
+    };
+</script>
