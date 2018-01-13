@@ -1,36 +1,50 @@
 class ApiController < ApplicationController
-  def api
-    # These gems make calling the API a piece of cake
+  def get
     require 'rest-client'
     require 'json'
 
-    # This is the base URL -- we'll add endpoints to it for specific data
-    base_url = "https://api.23andme.com/1/demo"
-    # This is the demo token, that gives you access to simulated data
-    token = "fdab6a6892b198e40c2484bf2121f761"
+    base_url = "https://api.23andme.com/3/accession/"
+
+    token = "a2e401e2dc7aa172df1b466597edcb8b"
 
     class _____
     	attr_accessor :id, :first_name, :last_name
     end
 
-    # Instantiate a new Person:
     person = Person.new
 
     # Get the data from the /names/ endpoint,
     # using the authentication headers
-    response = RestClient.get base_url + "/names/", headers=headers
+    response = RestClient.get base_url , headers=headers
 
     # Use JSON.load to put the response into the data variable:
     data = JSON.load response
 
-    profiles = data["profiles"]
+    accesson_data = data["profiles"]
 
+    puts accesson_data
+
+  end
+  def get_chromosome
+    require 'net/http'
+
+    uri = URI.parse("https://api.23andme.com/3/accession/?chromosome=1")
+
+    # Shortcut
+    #response = Net::HTTP.post_form(uri, {"user[name]" => "testusername", "user[email]" => "testemail@yahoo.com"})
+
+    # Full control
+    http = Net::HTTP.new(uri.host, uri.port)
+
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.set_form_data({"user[name]" => "testusername", "user[email]" => "testemail@yahoo.com"})
+
+    response = http.request(request)
+    render :json => response.body
   end
   def post
   end
   def put
-  end
-  def get
   end
   def delete
   end
