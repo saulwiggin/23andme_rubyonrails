@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113101309) do
+ActiveRecord::Schema.define(version: 20180114165228) do
 
   create_table "genomes", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20180113101309) do
     t.string   "txtfile_content_type"
     t.integer  "txtfile_file_size"
     t.datetime "txtfile_updated_at"
+  end
+
+  create_table "txt_genome_uploads", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

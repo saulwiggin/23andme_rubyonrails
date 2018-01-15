@@ -50,4 +50,9 @@ class ApiController < ApplicationController
   end
   def receive_code
   end
+  def txtDNAupload
+    uploaded_file = params[:file]
+    file_content = uploaded_file.read
+    puts file_content
+  end
 end
