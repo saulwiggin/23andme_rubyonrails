@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'welcome_page#welcome'
+
+  get 'welcome/welcomePage'
+
   get 'genomes/index'
 
   get 'genomes/new'

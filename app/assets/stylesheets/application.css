@@ -13,10 +13,6 @@
  *= require_tree .
  *= require_self
  *= require bootstrap.min
-
  */
 
 @import "bootstrap-sprockets"
-@import "bootstrap"
-
- background-image: url(science_of_feeling_great.jpg);
