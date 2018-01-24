@@ -20,10 +20,13 @@ Rails.application.routes.draw do
 
   get '/login' => "pages#login"
 
+  get '/modal' => 'pages#modal'
+
   get '/purchase' => 'pages#purchase'
 
   resources :genomes, only: [:index, :new, :create, :destroy]
-  
+
    root "genomes#index"
+
 
 end

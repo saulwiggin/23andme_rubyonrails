@@ -1,18 +1,19 @@
-<script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
-<div class='background-image'>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js'></script>
+<div class='background-image' style='background-image: url(/science_of_feeling_great.jpg)';>
   <div class='row' style='margin:40px'>
     <div class='col'>
       <div class="panel panel-default">
         <div class='panel panel-header'>
-          login
+          <img src='/nell_natural_elements_logo.png'  alt= "nell">
         </div>
         <div class="panel-body">
           <div class='23andme'>
-            <a class='.btn-round-lg' style="background-image:url('23andme.jpg')"
-            href="https://api.23andme.com/authorize/?redirect_uri=http://localhost:3000/receive_code/&response_type=code&client_id=a2e401e2dc7aa172df1b466597edcb8b&scope=basic rs123">
-            <%= image_tag("/assets/23andme.jpg",  alt: "23andme") %></a>
+            <a class='.btn-default' style="background-image:url('23andme.jpg')"
+            href="https://api.23andme.com/authorize/?redirect_uri=http://snp.lifebit-biotech.com&response_type=code&client_id=a2e401e2dc7aa172df1b466597edcb8b&scope=basic rs123">
+            <img src="/23andme.jpg",  alt= "23andme"></a>
           </div>
-          <div class='takeDNA'>
+          <!-- <div class='takeDNA'>
             <a class='.btn' href='localhost:3000/purchase'>Take DNA Test</a>
           </div>
           <div class='uploadDNA'>
@@ -22,7 +23,7 @@
               <input type="submit">Upload DNA Txtfile</button>
             </form>
           </div>
-        --> after selected put in link to lifebit template
+         after selected put in link to lifebit template -->
         </div>
       </div>
     </div>

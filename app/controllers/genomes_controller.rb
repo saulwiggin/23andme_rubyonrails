@@ -1,6 +1,6 @@
 class GenomesController < ApplicationController
   def index
-      @Genomes = Genome.all
+      @Genome = Genome.all
    end
 
    def new
@@ -19,7 +19,7 @@ class GenomesController < ApplicationController
    end
 
    def destroy
-      @Genomes = Genome.find(params[:id])
+      @Genome = Genome.find(params[:id])
       @Genome.destroy
       redirect_to resumes_path, notice:  "The Genome #{@Genome.name} has been deleted."
    end

@@ -8,4 +8,7 @@ class PagesController < ApplicationController
   def purchase
     render template: "pages/purchase"
   end
+  def Modal
+    render template: "pages/modal"
+  end
 end
